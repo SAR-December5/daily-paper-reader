@@ -1,0 +1,405 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-28T21:12:29.902623+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 7,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 4,
+    "quick_skim_target": 11,
+    "quick_selected": 4
+  },
+  "deep_dive": [
+    {
+      "id": "2605.21810v1",
+      "source": "arxiv",
+      "title": "Trace2Skill: Verifier-Guided Skill Evolution for Long-Context EDA Agents",
+      "abstract": "Complex Verilog Design Problems (CVDP) challenge hardware LLM agents because solving them requires localizing verifier-relevant RTL, testbenches, include paths, and build dependencies inside large repository snapshots, making precise edits, and recovering from sparse hidden-verifier failures. We present Trace2Skill, a test-time scaling framework that improves a hardware agent without RTL-specialized model fine-tuning. Rather than training a new model or only sampling more candidate solutions, Trace2Skill treats the agent's natural-language skill as an evolvable policy. It mines repeated rollout traces for success and failure modes, converts them into dense diagnostics and oracle lessons, and uses an oracle, mutator, and selector loop to produce task-specific skills that guide later search, editing, validation, and recovery. Because final pass/fail labels are often too coarse for hard failures, Trace2Skill also supports bounded runtime dense verifier feedback that returns sanitized functional observations while keeping hidden harnesses and reference solutions inaccessible to the agent. This feedback helps guide skill evolution and agent execution by connecting skill text, verifier evidence, and downstream behavior. Across hard CVDP tasks that defeat the seed CVDP agent, including tasks that also defeat frontier coding agents, Trace2Skill with dense verifier feedback substantially improves task pass rates and produces breakthrough passes on previously unsolved tasks, without requiring high-quality fine-tuning data, specialized RTL model training, or model weight updates. The same framework provides a general test-time scaling strategy that can extend beyond digital design to other verifiable EDA tasks.",
+      "authors": [
+        "Zijian Du",
+        "Nathaniel Pinckney"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-05-20T23:10:49+00:00",
+      "link": "https://arxiv.org/pdf/2605.21810v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "AI for electronic design automation",
+      "llm_evidence_cn": "AI在电子设计自动化中的应用",
+      "llm_evidence": "AI在电子设计自动化中的应用",
+      "canonical_evidence": "AI在电子设计自动化中的应用",
+      "llm_tldr_en": "Trace2Skill improves hardware LLM agents for complex Verilog design problems by evolving natural-language skills from rollout traces without fine-tuning, enabling verifier-guided skill evolution.",
+      "llm_tldr_cn": "针对复杂Verilog设计问题，现有硬件LLM代理需要定位大量RTL文件并处理隐蔽验证器失败。本文提出Trace2Skill框架，通过挖掘重复运行轨迹中的成功与失败模式，将自然语言技能作为可进化策略，使用预言机、变异器和选择器循环生成任务优化技能，无需RTL专用微调。实验表明该方法有效提升了代理解决硬件设计问题的能力，为AI辅助电子设计自动化提供了新范式。",
+      "llm_tldr": "针对复杂Verilog设计问题，现有硬件LLM代理需要定位大量RTL文件并处理隐蔽验证器失败。本文提出Trace2Skill框架，通过挖掘重复运行轨迹中的成功与失败模式，将自然语言技能作为可进化策略，使用预言机、变异器和选择器循环生成任务优化技能，无需RTL专用微调。实验表明该方法有效提升了代理解决硬件设计问题的能力，为AI辅助电子设计自动化提供了新范式。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "design automation using AI",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.25832v1",
+      "source": "arxiv",
+      "title": "When Search Becomes Memory: Turning Robot Design Trials into Transferable Skills",
+      "abstract": "Large language models (LLMs) are increasingly used as proposal generators for evolutionary robot design, yet most loops remain memoryless: simulator results shape the next population but are not preserved as reusable design knowledge. We present Auto-Robotist, a self-evolving LLM agent that distills morphology-search traces into an explicit natural-language skill library. Each skill stores a structural archetype, evidence-grounded positive and negative rules, and the evaluated designs that support them, making design memory inspectable rather than implicit in a population. During search, the agent retrieves skills to condition LLM edits of elite bodies while retaining a Genetic Algorithm (GA) mutation path for exploration; after evaluation, it updates the library through Add, Diagnose, and Merge. Across seven EvoGym tasks spanning locomotion, traversal, and object interaction, Auto-Robotist improves cold-start 5x5 search and transfers learned skills to 10x10 design spaces, where reference-conditioned transfer outperforms GA on every task. These results suggest that LLM agents can convert expensive physical evaluations into reusable, auditable design principles. Our code will be released upon acceptance.",
+      "authors": [
+        "Yunfei Wang",
+        "Xiaohao Xu",
+        "Yang Li",
+        "Xiaonan Huang"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CL",
+        "cs.CV"
+      ],
+      "published": "2026-05-25T13:29:45+00:00",
+      "link": "https://arxiv.org/pdf/2605.25832v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "LLM-based robot design automation with skill memory",
+      "llm_evidence_cn": "基于LLM的机器人设计自动化，带有技能记忆",
+      "llm_evidence": "基于LLM的机器人设计自动化，带有技能记忆",
+      "canonical_evidence": "基于LLM的机器人设计自动化，带有技能记忆",
+      "llm_tldr_en": "Auto-Robotist uses LLM to evolve robot designs and distill trials into reusable skill libraries, enabling memory-efficient design automation.",
+      "llm_tldr_cn": "该论文针对当前LLM驱动的机器人设计循环缺乏记忆的问题，提出了Auto-Robotist，一个自我进化的LLM代理。它能够在进化搜索过程中将形态设计轨迹提炼为自然语言技能库，每个技能包含结构原型、经验规则和评估证据。该方法结合遗传算法进行探索，使设计知识显式可复用，显著提升设计自动化效率。",
+      "llm_tldr": "该论文针对当前LLM驱动的机器人设计循环缺乏记忆的问题，提出了Auto-Robotist，一个自我进化的LLM代理。它能够在进化搜索过程中将形态设计轨迹提炼为自然语言技能库，每个技能包含结构原型、经验规则和评估证据。该方法结合遗传算法进行探索，使设计知识显式可复用，显著提升设计自动化效率。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "design automation using AI",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.27174v1",
+      "source": "arxiv",
+      "title": "An investigation of AI integration in sound designer workflows and experiences",
+      "abstract": "Artificial intelligence is increasingly being integrated into professional audio production workflows, yet a gap persists between the tools developers produce and the requirements of practising sound designers. This paper investigates this gap through a mixed-methods study comprising a survey of 76 practitioners and follow-up semi-structured interviews with 20 industry professionals. Results were analysed using descriptive statistical analysis and thematic analysis to identify patterns across both datasets. Five themes emerged from our analysis: Context, Workflow, Potential, Risks, and Right Use. Our work indicates that current AI tools perform adequately in fast-consumption media contexts but lack the narrative sophistication required for high-end sound design (films, immersive experiences etc). Practitioners demonstrate a preference for assistive, task-specific applications, particularly in audio restoration and library management, over end-to-end generative systems. This work contributes to the on-going discussion on the use of AI and AI-enhanced tools in the creative industries. We report on the current status of the field from the point of view of sound designers and creative audio practitioners, and offer a set of recommendation for sound technologist and developers based on our findings to guide the development of more informed AI tools for sound design.",
+      "authors": [
+        "Nelly Garcia",
+        "Joshua Reiss"
+      ],
+      "primary_category": "cs.SD",
+      "categories": [
+        "cs.SD",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-05-26T15:28:51+00:00",
+      "link": "https://arxiv.org/pdf/2605.27174v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Investigation of AI tools in sound design workflows",
+      "llm_evidence_cn": "调查AI工具在声音设计工作流中的集成",
+      "llm_evidence": "调查AI工具在声音设计工作流中的集成",
+      "canonical_evidence": "调查AI工具在声音设计工作流中的集成",
+      "llm_tldr_en": "Mixed-methods study of AI integration in sound designer workflows reveals gaps between tool capabilities and professional needs, offering design implications.",
+      "llm_tldr_cn": "该论文通过调查76名从业者和20名深入访谈，研究了AI工具在声音设计师工作流中的集成现状。发现当前AI工具在快速消费媒体场景表现尚可，但缺乏专业级声音设计所需的叙事复杂度。研究提炼出上下文、工作流、潜力、风险和正确使用五个主题，为AI设计工具的改进提供了基于实证的指导。",
+      "llm_tldr": "该论文通过调查76名从业者和20名深入访谈，研究了AI工具在声音设计师工作流中的集成现状。发现当前AI工具在快速消费媒体场景表现尚可，但缺乏专业级声音设计所需的叙事复杂度。研究提炼出上下文、工作流、潜力、风险和正确使用五个主题，为AI设计工具的改进提供了基于实证的指导。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "AI tools for design",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.28733v1",
+      "source": "arxiv",
+      "title": "Utility-Aware Multimodal Contrastive Learning for Product Image Generation",
+      "abstract": "Product images strongly influence consumer decision-making in online marketplaces. Empowered by multimodal contrastive learning, generative AI can output images that closely align with text prompts. Yet existing generative AI models do not directly optimize marketplace performance. This is a critical gap, since semantic alignment alone does not guarantee that an image will sell. To address this limitation, we propose a \\textit{utility-aware multimodal contrastive learning} framework that incorporates consumer demand into a novel Utility-Aware InfoNCE loss. Optimizing this utility-aware objective guides generation toward images that are both semantically coherent and demand-enhancing. This effect arises directly from a shift in the learned image-text representation space toward demand-driven visual cues, which we also validate through the theoretical bound of the proposed objective. In downstream applications on Amazon and Airbnb, product images generated and edited by our method outperform state-of-the-art models in increasing demand and preserving fidelity, while maintaining text-image consistency. Notably, our utility-aware framework preserves inverse U-shaped demand patterns for attributes such as aesthetics and uniqueness, improving demand-based performance while preserving fidelity and semantic consistency. Human-subject experiments further validate its commercial effectiveness. As generative AI technology continues to evolve, our utility-aware component can be flexibly embedded into emerging generative models to improve direct commercial use.",
+      "authors": [
+        "Xiaohang Feng",
+        "Yiling Xie"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-05-27T16:54:51+00:00",
+      "link": "https://arxiv.org/pdf/2605.28733v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "deep learning for product image generation",
+      "llm_evidence_cn": "深度学习在产品图像生成中的应用",
+      "llm_evidence": "深度学习在产品图像生成中的应用",
+      "canonical_evidence": "深度学习在产品图像生成中的应用",
+      "llm_tldr_en": "Utility-aware multimodal contrastive learning framework optimizes product image generation for marketplace demand by incorporating consumer demand into a novel InfoNCE loss.",
+      "llm_tldr_cn": "现有生成式AI能生成与文本提示对齐的产品图像，但未直接优化市场表现。本文提出效用感知多模态对比学习框架，将消费者需求融入新的Utility-Aware InfoNCE损失函数，引导生成兼顾语义一致性和需求提升的图像。实验证明该方法在在线市场场景中显著提高了图像对销售的促进作用，为深度学习在产品设计中的应用提供了新方向。",
+      "llm_tldr": "现有生成式AI能生成与文本提示对齐的产品图像，但未直接优化市场表现。本文提出效用感知多模态对比学习框架，将消费者需求融入新的Utility-Aware InfoNCE损失函数，引导生成兼顾语义一致性和需求提升的图像。实验证明该方法在在线市场场景中显著提高了图像对销售的促进作用，为深度学习在产品设计中的应用提供了新方向。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "deep learning in product design",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.21635v1",
+      "source": "arxiv",
+      "title": "Addressing the Synergy Gap: The Six Elements of the Design Space",
+      "abstract": "AI is now embedded in healthcare, finance, policy, and many other domains, yet genuine human-AI synergy - combined performance that exceeds what either party achieves alone - is uncommon. Meta-analyses show that AI assistance tends to improve human performance compared to working alone, but studies finding true synergy are scarce. We call this persistent shortfall the synergy gap. Most current work treats human-AI combination as an engineering problem and concentrates on interpretability, trust calibration, or interface design. These matter, but they cover only part of what determines whether combination works. Closing the synergy gap, we argue, requires explicit engagement with a wider design space. We map that space through six interconnected elements: sociotechnical context, decision-making frameworks, human decision participants, AI capabilities, interaction, and holistic evaluation. For each element, we describe what it covers, how it shapes the others in practice, and what it implies for design. The result is a shared vocabulary for practitioners building hybrid systems, an analytical lens for researchers studying combination patterns, and a starting point for evaluators interested in the full quality of human-AI decision-making rather than accuracy alone.",
+      "authors": [
+        "Tommaso Turchi",
+        "Ben Wilson",
+        "Matt Roach",
+        "Alan Dix",
+        "Alessio Malizia"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "published": "2026-05-20T18:46:48+00:00",
+      "link": "https://arxiv.org/pdf/2605.21635v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Human-AI synergy design space directly addresses AI in design",
+      "llm_evidence_cn": "人机协同设计空间直接针对AI在设计中的应用",
+      "llm_evidence": "人机协同设计空间直接针对AI在设计中的应用",
+      "canonical_evidence": "人机协同设计空间直接针对AI在设计中的应用",
+      "llm_tldr_en": "Identifies the synergy gap in human-AI collaboration and maps a six-element design space to improve combined performance, relevant to AI-integrated design.",
+      "llm_tldr_cn": "该论文指出当前人机协同中普遍存在协同鸿沟，即AI辅助虽提升个体表现但难以实现超越单方的协同效应。作者提出一个包含社会、交互、认知等六个要素的设计空间框架，强调要弥合这一鸿沟必须超越传统解释性、信任校准和界面设计，从更宏观的设计空间入手。该框架为AI融入设计过程提供了理论指导。",
+      "llm_tldr": "该论文指出当前人机协同中普遍存在协同鸿沟，即AI辅助虽提升个体表现但难以实现超越单方的协同效应。作者提出一个包含社会、交互、认知等六个要素的设计空间框架，强调要弥合这一鸿沟必须超越传统解释性、信任校准和界面设计，从更宏观的设计空间入手。该框架为AI融入设计过程提供了理论指导。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "artificial intelligence in design",
+      "matched_requirement_id": "req-1",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.27203v1",
+      "source": "arxiv",
+      "title": "Generative Animations: A Multi-Model Pipeline for Prompt-Driven Motion Synthesis",
+      "abstract": "Animation elevates digital documents into immersive experiences, yet creating custom motion paths remains cumbersome, requiring designers to manually select presets, plot Bézier points, and configure timing properties. We introduce Generative Animations, a system that transforms natural language prompts into production-ready animations. By chaining Large Language Models (LLMs) for semantic parsing with the Segment Anything Model (SAM) for visual grounding, our pipeline automatically generates motion paths that respect scene geometry, handle depth-based occlusions, and honor 3D perspective transforms. We demonstrate the system through three use cases: contour-following trajectories, orbital animations with z-order awareness, and perspective-aligned motion on transformed objects.",
+      "authors": [
+        "Mannat Khurana",
+        "Sanyam Jain",
+        "Rishav Agarwal"
+      ],
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "published": "2026-05-26T15:58:30+00:00",
+      "link": "https://arxiv.org/pdf/2605.27203v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "AI tool for generating animations from natural language prompts",
+      "llm_evidence_cn": "基于自然语言提示生成动画的AI工具",
+      "llm_evidence": "基于自然语言提示生成动画的AI工具",
+      "canonical_evidence": "基于自然语言提示生成动画的AI工具",
+      "llm_tldr_en": "Generative Animations uses LLMs and SAM to translate natural language into production-ready animations, automating motion synthesis for designers.",
+      "llm_tldr_cn": "针对传统动画制作繁琐问题，提出生成式动画系统，通过大语言模型语义解析与分割模型视觉定位，自动生成符合场景几何和深度遮挡的运动路径。三个实例展示其生成轮廓跟随、轨道动画和透视对齐动画的能力，验证了该系统作为AI设计工具的实用性和有效性。",
+      "llm_tldr": "针对传统动画制作繁琐问题，提出生成式动画系统，通过大语言模型语义解析与分割模型视觉定位，自动生成符合场景几何和深度遮挡的运动路径。三个实例展示其生成轮廓跟随、轨道动画和透视对齐动画的能力，验证了该系统作为AI设计工具的实用性和有效性。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "AI tools for design",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2605.27725v1",
+      "source": "arxiv",
+      "title": "CFDTwin: An open-source GUI and Python toolkit for POD-NN surrogate modeling of ANSYS Fluent simulations",
+      "abstract": "High-fidelity computational fluid dynamics (CFD) is widely used for thermal-fluid design, but repeated CFD solves remain expensive for design optimization, uncertainty analysis, and digital-twin workflows. Recently, our team has demonstrated that a proper orthogonal decomposition and neural-network (POD-NN) surrogate can predict two-dimensional thermal fields in an electronics-cooling cold plate with large inference speedups while preserving physically interpretable modal structure. Reproducing and extending such workflows, however, typically requires custom scripts for parameter sampling, Fluent automation, data extraction, reduced-order model construction, neural-network training, validation, and prediction. This paper introduces CFDTwin, an open-source Python package and optional desktop graphical user interface (GUI) that packages these steps into a reusable workflow for ANSYS Fluent simulations. CFDTwin allows users to define simulation inputs and output quantities, generate design-of-experiments samples, run and resume Fluent batch simulations, train POD-NN surrogate models for scalar, surface-field, and cell-zone outputs, inspect validation metrics, and evaluate trained models at new design points without re-running Fluent. The same workflow is exposed through a scriptable Python API and a GUI, supporting reproducible studies, user-facing model validation, and automated design exploration. CFDTwin extends the prior POD-NN modeling study from a case-specific research implementation to a reusable research-software platform for CFD surrogate modeling and digital-twin development.",
+      "authors": [
+        "Daniel Curl",
+        "Han Hu"
+      ],
+      "primary_category": "physics.flu-dyn",
+      "categories": [
+        "physics.flu-dyn",
+        "cs.LG"
+      ],
+      "published": "2026-05-26T22:00:49+00:00",
+      "link": "https://arxiv.org/pdf/2605.27725v1",
+      "tags": [
+        "keyword:AI-design"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "AI surrogate modeling for design optimization in thermal-fluid engineering",
+      "llm_evidence_cn": "用于热流体工程设计优化的AI代理模型",
+      "llm_evidence": "用于热流体工程设计优化的AI代理模型",
+      "canonical_evidence": "用于热流体工程设计优化的AI代理模型",
+      "llm_tldr_en": "CFDTwin provides a GUI and Python toolkit for POD-NN surrogate modeling of Fluent simulations, enabling efficient design optimization and digital twins.",
+      "llm_tldr_cn": "该论文针对高保真CFD仿真在设计优化中计算成本高的问题，开发了CFDTwin开源工具包。该工具包集成了参数采样、Fluent自动化、POD-NN代理模型构建、训练与预测流程，并提供图形界面。通过电子冷却散热器案例验证，代理模型在保持物理可解释性的同时实现大幅加速。该工具显著降低了设计优化和数字孪生工作流的门槛。",
+      "llm_tldr": "该论文针对高保真CFD仿真在设计优化中计算成本高的问题，开发了CFDTwin开源工具包。该工具包集成了参数采样、Fluent自动化、POD-NN代理模型构建、训练与预测流程，并提供图形界面。通过电子冷却散热器案例验证，代理模型在保持物理可解释性的同时实现大幅加速。该工具显著降低了设计优化和数字孪生工作流的门槛。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "design optimization with AI",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2605.27643v1",
+      "source": "arxiv",
+      "title": "Agentic Language-to-Objective Synthesis for Optofluidic Assembly",
+      "abstract": "Light-based advanced manufacturing increasingly requires programmable, closed-loop tools that translate human design intent into executable operations at small length scales. Yet a key bottleneck persists across robotic and manufacturing modalities: turning user intent into machine-readable objectives that are reliably executable. While micro-robotics offers versatile manipulation via optical actuation of fluids, mathematically tractable goal specification remains manual and hard to reuse. Here, we introduce Speak-to-Objective, a modular agentic pipeline that uses a conditioned Large Language Model (LLM) to translate spoken or written commands into fully differentiable objective functions for assembling microparticles in a constraint-aware inverse solver (SLSQP) and on an experimental optofluidic platform. The approach employs a compact loop - perceive -> compose -> propose -> act -> report & learn - that treats the objective as the interface between intent and actuation, separating what to assemble or pattern from how to actuate, while learning from user feedback. The pipeline composes geometry, spacing, and assignment/topology terms to generate robust descriptive objectives that assemble from partial traces and recover after perturbations, as well as explicit objectives for precise placement, all in an actuator-agnostic fashion. Using laser-induced thermoviscous flows as the physical actuation modality, we demonstrate natural-language-programmable, light-based microscale assembly of particle patterns in a microfluidic environment. Beyond its immediate impact on programmable microassembly, and using laser-induced optofluidic actuation as a reduced-complexity experimental platform, our work points toward self-driving, AI-assisted optical manufacturing platforms in which natural language, differentiable objectives, and laser-based actuation are coupled into a reusable digital workflow.",
+      "authors": [
+        "Ivan Saraev",
+        "Elena Erben",
+        "Weida Liao",
+        "Fan Nan",
+        "Gerhard Neumann",
+        "Eric Lauga",
+        "Moritz Kreysing"
+      ],
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO",
+        "physics.optics"
+      ],
+      "published": "2026-05-26T20:03:54+00:00",
+      "link": "https://arxiv.org/pdf/2605.27643v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "AI-driven language-to-objective synthesis for automated microrobotic assembly design",
+      "llm_evidence_cn": "AI驱动的语言到目标合成实现微机器人组装设计自动化",
+      "llm_evidence": "AI驱动的语言到目标合成实现微机器人组装设计自动化",
+      "canonical_evidence": "AI驱动的语言到目标合成实现微机器人组装设计自动化",
+      "llm_tldr_en": "Speak-to-Objective pipeline uses a conditioned LLM to translate user commands into differentiable objective functions for optofluidic assembly design automation.",
+      "llm_tldr_cn": "针对微制造中从设计意图到可执行目标函数的瓶颈，提出Speak-Objective代理式流水线，利用条件大语言模型将口语或书面指令转化为可微目标函数，用于约束感知反演求解器中的微粒组装。该方法实现了设计自动化的端到端闭环，显著提升可复用性和易用性。",
+      "llm_tldr": "针对微制造中从设计意图到可执行目标函数的瓶颈，提出Speak-Objective代理式流水线，利用条件大语言模型将口语或书面指令转化为可微目标函数，用于约束感知反演求解器中的微粒组装。该方法实现了设计自动化的端到端闭环，显著提升可复用性和易用性。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "design automation using AI",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2605.21560v1",
+      "source": "arxiv",
+      "title": "AutoMCU: Feasibility-First MCU Neural Network Customization via LLM-based Multi-Agent Systems",
+      "abstract": "Deploying neural networks on microcontroller units (MCUs) is critical for edge intelligence but remains challenging due to tight memory, storage, and computation constraints. Existing approaches, such as model compression and hardware-aware neural architecture search (HW-NAS), often depend on proxy metrics, incur high search cost, and do not fully bridge the gap between architecture design and verified deployment. This paper presents AutoMCU, a feasibility-first large language model (LLM)-based multi-agent system for automated neural network customization under MCU constraints. Given natural-language task requirements and hardware specifications, AutoMCU iteratively generates structured architecture candidates, filters infeasible designs through vendor toolchain feedback before training, evaluates feasible models under a controlled protocol, and verifies deployability through backend-grounded deployment analysis. AutoMCU includes two key mechanisms: 1) hardware-in-the-loop architecture generation for early elimination of undeployable candidates under RAM and Flash constraints, and 2) state-isolated multi-agent scheduling for stable coordination of proposal, training, evaluation, and deployment stages. Experiments on CIFAR-10 and CIFAR-100 under strict MCU constraints show that AutoMCU achieves competitive accuracy while reducing customization time to about 1--2 hours, compared with hundreds of GPU hours for representative MCU-oriented HW-NAS baselines. Comparisons with ColabNAS and the LLM-based NAS method GENIUS on NAS-Bench-201 further demonstrate the effectiveness and stability of AutoMCU. Real-device deployments on multiple STM32 microcontrollers validate its practical applicability to MCU-scale edge intelligence.",
+      "authors": [
+        "Penglin Dai",
+        "Zijie Zhou",
+        "Xincao Xu",
+        "Junhua Wang",
+        "Xiao Wu",
+        "Lixin Duan"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-05-20T14:59:17+00:00",
+      "link": "https://arxiv.org/pdf/2605.21560v1",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "LLM-based multi-agent system for automated neural network architectural design optimization under MCU constraints",
+      "llm_evidence_cn": "基于LLM的多代理系统自动优化MCU约束下的神经网络架构设计",
+      "llm_evidence": "基于LLM的多代理系统自动优化MCU约束下的神经网络架构设计",
+      "canonical_evidence": "基于LLM的多代理系统自动优化MCU约束下的神经网络架构设计",
+      "llm_tldr_en": "AutoMCU uses LLM-based multi-agent system to automate neural network architecture customization for MCUs, optimizing design under hardware constraints.",
+      "llm_tldr_cn": "针对MCU部署神经网络时架构设计优化困难的问题，提出AutoMCU系统，利用大语言模型驱动的多代理协作，根据自然语言需求和硬件规格自动生成并筛选可行的架构候选项，实现可行性优先的神经网络设计自动化。在多个MCU平台上验证了其有效性。",
+      "llm_tldr": "针对MCU部署神经网络时架构设计优化困难的问题，提出AutoMCU系统，利用大语言模型驱动的多代理协作，根据自然语言需求和硬件规格自动生成并筛选可行的架构候选项，实现可行性优先的神经网络设计自动化。在多个MCU平台上验证了其有效性。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "design optimization with AI",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "biorxiv-10-1101-2025-06-30-662286-v2",
+      "source": "biorxiv",
+      "title": "Rapid Assessment of Size, Shape, and Chemical Complementarity of Ligands for Computational Protein Design",
+      "abstract": "Driven by deep-learning methods, computational protein design can now rapidly generate de novo structures, opening new frontiers for creating proteins that bind small molecules tightly and specifically, although achieving predictable and tunable binding remains challenging. Here we address this with a rapid physics-based computational method to generate isosteric and chemically complementary binding pockets for small-molecule targets in de novo designed proteins. We test this experimentally by constructing and characterizing binding proteins for several synthetic and natural chromophores. By evaluating only single-digit numbers of designs, the pipeline delivers stable proteins with pre-organised binding sites confirmed by X-ray crystallography, which bind the targets with micromolar affinities or better. To illustrate the scope and applications of this approach, we incorporate selective and coupled chromophore-binding sites in a two-domain de novo protein enabling controlled energy transfer between the two sites, and we develop a small de novo binding protein that can be used in live mammalian cells to visualise sub-cellular structures.",
+      "authors": [
+        "Petrenas, R.",
+        "Ozga, K.",
+        "Chubb, J. J.",
+        "Romanyuk, A. V.",
+        "Alibhai, D.",
+        "McManus, J. J.",
+        "Leggett, G. J.",
+        "Scrutton, N. S.",
+        "Oliver, T. A. A.",
+        "Woolfson, D. N."
+      ],
+      "primary_category": "biophysics",
+      "categories": [
+        "biophysics"
+      ],
+      "published": "2026-05-23T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.1101/2025.06.30.662286v2.full.pdf",
+      "tags": [
+        "keyword:AI-design",
+        "query:AI-design"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "deep learning in computational protein design",
+      "llm_evidence_cn": "深度学习在计算蛋白质设计中的应用",
+      "llm_evidence": "深度学习在计算蛋白质设计中的应用",
+      "canonical_evidence": "深度学习在计算蛋白质设计中的应用",
+      "llm_tldr_en": "A physics-based computational method rapidly generates isosteric and chemically complementary binding pockets for small-molecule targets in de novo designed proteins, validated with experimental characterization.",
+      "llm_tldr_cn": "计算蛋白质设计虽能快速生成新结构，但实现可预测的配体结合仍具挑战。本文提出一种基于物理的快速计算方法，为从头设计蛋白质中的小分子靶点生成等排且化学互补的结合口袋。通过构建并表征多个合成/天然发色团的结合蛋白，仅评估个位数设计即获得稳定蛋白，证明了方法的高效性。该工作推动了AI在分子设计领域的实用化。",
+      "llm_tldr": "计算蛋白质设计虽能快速生成新结构，但实现可预测的配体结合仍具挑战。本文提出一种基于物理的快速计算方法，为从头设计蛋白质中的小分子靶点生成等排且化学互补的结合口袋。通过构建并表征多个合成/天然发色团的结合蛋白，仅评估个位数设计即获得稳定蛋白，证明了方法的高效性。该工作推动了AI在分子设计领域的实用化。",
+      "llm_tags": [
+        "query:ai-design"
+      ],
+      "matched_query_tag": "query:ai-design",
+      "matched_query_text": "artificial intelligence applications in design",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
