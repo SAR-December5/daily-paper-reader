@@ -1,0 +1,224 @@
+Title: Beyond AI Delegation: A Prompt Pattern Framework for Productive Struggle and Evaluative Judgement in Secure Coding Education
+
+URL Source: https://arxiv.org/pdf/2605.24447v1
+
+Published Time: Tue, 26 May 2026 00:33:48 GMT
+
+Number of Pages: 13
+
+Markdown Content:
+# Beyond AI Delegation: A Prompt Pattern Framework for Productive Struggle and Evaluative Judgement in Secure Coding Education 
+
+## Philipp Haindl 1, Oliver Eigner 1, and Peter Kieseberg 11University of Applied Sciences St. Pölten, Campus Platz 1, 3100 St. Pölten, Austria 
+
+Correspondence: philipp.haindl@ustp.at 
+
+May 26, 2026 
+
+Abstract Purpose: Large language models make it easy for students to delegate writing, analysis, and problem-solving to automated systems—bypassing the effortful en-gagement that produces lasting understanding. We introduce a practical framework that helps educators keep GenAI in the course without removing the cognitive de-mands that make it worthwhile. 
+
+Methods: We apply Design Science Research (DSR) to synthesise and adapt a tax-onomy of nine prompt engineering patterns from established catalogs in the computer science literature, mapped to two pedagogical constructs—Productive Struggle and Evaluative Judgement. A course design for an Advanced Secure Coding module, structured using the DELTA framework, demonstrates the artifact’s applicability. 
+
+Results: Nine prompt patterns, each mapped to a specific pedagogical function, give instructors fine-grained control over how students interact with AI. The se-cure coding design shows how three patterns—Flipped Interaction, Alternative Ap-proaches, and Cognitive Verifier—scaffold vulnerability discovery and remediation while keeping students in the reasoning role. 
+
+Conclusion: The framework provides a replicable approach to designing AI-augmented learning experiences that preserve student reasoning, and establishes a structured basis for future empirical evaluation in live course settings. 
+
+Keywords: generative AI in higher education; prompt engineering; productive struggle; evaluative judgement; secure coding education 
+
+1
+
+> arXiv:2605.24447v1 [cs.SE] 23 May 2026
+
+# Contents 
+
+1 Introduction 32 Background 3
+
+2.1 Productive Struggle and Evaluative Judgement . . . . . . . . . . . . . . . 32.2 Prompt Patterns as a Structured Discipline . . . . . . . . . . . . . . . . . . 4
+
+3 Methodology 4
+
+3.1 Problem Identification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 43.2 Objectives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53.3 Artifact Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 53.4 Demonstration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+
+4 The Prompt Engineering Framework 5
+
+4.1 A Taxonomy of Prompt Patterns . . . . . . . . . . . . . . . . . . . . . . . 5
+
+5 Applying the Framework: A Secure Coding Module 7
+
+5.1 Context . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75.2 Learning Outcomes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 75.3 Learning Activities . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 85.3.1 Guided Vulnerability Discovery . . . . . . . . . . . . . . . . . . . . 85.3.2 Comparative Remediation . . . . . . . . . . . . . . . . . . . . . . . 85.3.3 Supervised Implementation . . . . . . . . . . . . . . . . . . . . . . 85.4 Assessment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95.5 Reflection and Next Iteration . . . . . . . . . . . . . . . . . . . . . . . . . 9
+
+6 Limitations 97 Conclusion 10 
+
+21 Introduction 
+
+Generative AI tools such as OpenAI ChatGPT, Anthropic Claude and Google Gemini have arrived in university classrooms faster than most curricula could adapt. The appeal is obvious: a well-posed question yields a plausible essay, a working code snippet, or a structured analysis within seconds—and students have noticed. One undergraduate put it bluntly in a widely discussed Chronicle piece: using ChatGPT removes the need to think [1]. The result is a delegation dynamic: cognitive work that used to belong to the student is offloaded to the system, and the student receives the output without having performed the reasoning that produced it. When an AI can produce a complete solution, the student no longer has to wrestle with the problem—and that struggle, uncomfortable as it is, is where much of the learning happens [2]. This dynamic has a name in the education literature: Productive Struggle (PS) .Hiebert and Grouws [2] describe it as the phase in which learners grapple with tasks that exceed their current understanding, forcing a reorganisation of knowledge structures that would otherwise not occur. GenAI makes it easy to skip this phase entirely. The risk is not that students use AI, but that they use it in a way that produces outputs without producing understanding—a distinction that matters a great deal in fields like computer security, where shallow knowledge can have serious consequences [3, 4]. The usual institutional response has been restriction: banning AI tools, redesigning as-sessments to catch AI-generated text, or ignoring the issue altogether [5]. None of these approaches is sustainable. A more useful question is how to design courses in which AI tools are present but do not replace the student’s cognitive work. This paper addresses that question. We argue that Prompt Engineering—structuring the inputs to an LLM to obtain particular kinds of output—is the missing link between pedagogical intent and practical course design. Used naively, a prompt gets an answer. Used deliberately, a prompt can force the student to analyze before the AI explains, to compare before the AI recommends, to justify before the AI confirms. The difference lies in how the prompt is constructed. Our contribution is a taxonomy of nine prompt patterns, adapted from software engineer-ing catalogs [6, 7], and mapped to two pedagogical goals: sustaining Productive Struggle and developing Evaluative Judgement (EJ) —the capacity to assess the quality of work, including AI-generated work, against appropriate criteria [8]. We demonstrate how these patterns can be applied in a master’s-level secure coding module using the DELTA course design framework [9]. 
+
+# 2 Background 
+
+## 2.1 Productive Struggle and Evaluative Judgement 
+
+The idea that learners benefit from working through difficulty is not new. Vygotsky’s zone of proximal development [10] and later empirical work by Hiebert and Grouws [2] both make the case that effortful engagement with tasks just beyond current competence is a prerequisite for deep, transferable understanding. The practical implication is that 3removing the difficulty—whether through tutors, textbooks, or now AI tools—removes the mechanism through which understanding is built [1, 11]. Alongside Productive Struggle, Bearman et al. [8] have argued for the growing importance of Evaluative Judgement: the ability to assess the quality of one’s own work and that of others, including automated systems. In a context where AI can generate plausible-sounding but incorrect or insecure code, the capacity to evaluate critically is not a soft skill—it is a technical requirement. Tai et al. [12] note that EJ develops through deliberate practice of assessment and comparison, not passive consumption. Lodge et al. [13] make the related point that AI interactions should be designed to augment, not replace, this kind of active engagement. 
+
+## 2.2 Prompt Patterns as a Structured Discipline 
+
+Prompt engineering has matured considerably since the earliest trial-and-error interac-tions with language models. White et al. [6] and Schmidt et al. [14] were among the first to apply the design patterns idea from software engineering [15] to the problem of LLM interaction. Rather than crafting each prompt from scratch, a catalog of reusable patterns—Persona, Template, Flipped Interaction, and so on—provides a vocabulary of reliable techniques. Pai [7] later extended this work with a six-category taxonomy that clarifies the intent behind each pattern type. These catalogs were developed primarily for software development contexts. Our work adapts them for a different purpose. Schuelke-Leech coins the term “prompt literacy” for the ability to craft effective prompts, and argues that this is now a teachable component of AI literacy [16]. We take that a step further: prompt literacy is not just something students should learn about —it is something educators should use with students to keep them in the reasoning role when an AI is present. 
+
+# 3 Methodology 
+
+The framework was deployed by the first author in a master’s-level research methods course at our university. We use Design Science Research (DSR) as the methodolog-ical framework [17]. DSR is a natural fit for this work because our primary contribution is an artifact—the prompt pattern taxonomy and the associated mapping to pedagogical goals—rather than an empirical finding about student behaviour. The goal is to produce something that practitioners can use and that future research can evaluate and refine. Following Hevner et al. [17], the work proceeded through four phases. 
+
+## 3.1 Problem Identification 
+
+We identified two related problems in contemporary HE: the erosion of Productive Strug-gle as students offload cognitive work to GenAI, and the absence of practical guidance that tells educators how to integrate AI without simply prohibiting it. 43.2 Objectives 
+
+The artifact should be specific enough to translate directly into course activities, general enough to adapt across CS topics, and grounded in documented pedagogical constructs rather than intuition. 
+
+## 3.3 Artifact Design 
+
+We worked in three stages. First, a review of the HE literature identified PS and EJ as the competencies most directly threatened by unrestricted GenAI use. Second, we compared the prompt pattern catalogs of White et al. [6] and Pai [7], selected the patterns most relevant to educational settings, and adopted Pai’s six-category classification as the organising structure. Third, we mapped each pattern to one or more pedagogical functions: scaffolding analysis, eliciting comparison, compelling justification, or revealing AI limitations—drawing an explicit line from each pattern to a pedagogical purpose. 
+
+## 3.4 Demonstration 
+
+The framework was deployed in a master’s-level research methods course. Students learned the taxonomy explicitly and then used it to develop research proposals for their theses, structured around the Design Science Canvas [18]. This application gave us an initial read on which patterns students found natural to use and which required more scaffolding—informing the course design sketch in Section 5. 
+
+# 4 The Prompt Engineering Framework 
+
+Our taxonomy is intended to sit inside an existing course design framework, not to replace one. Table 1 briefly characterizes four frameworks that are relevant here. The DELTA Framework [9] gets the most detailed treatment in Section 5 because it provides a natural home for the prompt patterns at the activity design level. 
+
+## 4.1 A Taxonomy of Prompt Patterns 
+
+Table 2 lists the nine patterns in the taxonomy, grouped into four categories adapted from Pai [7] and White et al. [6]. For each pattern, the table gives the educational rationale and a concrete example from a computing or security context. The selection is not exhaustive; the original catalogs each contain considerably more patterns. These nine were chosen because they map directly onto activities where student cognition would otherwise be most easily bypassed. 5Table 1: Pedagogical Frameworks Referenced in This Work 
+
+Framework Core Idea Role in Our Approach Constructive Alignment [19] Learning outcomes, activities, and assessment must be explicitly linked. Ensures prompt-based activities di-rectly address the competencies stated in the course outcomes. 
+
+3R-Framework [20] Rethink, Redesign, Reassess: a cy-cle for adapting teaching practice. Provides a high-level structure for iterating on AI-augmented course designs over successive offerings. 
+
+TPACK [21] Effective teaching requires integrat-ing Technology, Pedagogy, and Con-tent knowledge. Prompt engineering, in our view, be-longs to the Technological Pedagog-ical Knowledge (TPK) layer. 
+
+DELTA Frame-work [9] A five-step iterative cycle: Context, Outcomes, Activities, Assessment, Reflection. Used to structure the secure coding module in Section 5. 
+
+Table 2 A Taxonomy of Prompt Patterns for Pedagogical Application (adapted from White et al. [6] and Pai [7]) 
+
+Pattern Educational Rationale Example in CS / Security 
+
+Output Customization 
+
+Persona Setting a role shapes the AI’s tone and stance, making it a consis-tent interlocutor rather than an answer machine [7]. 
+
+“Act as a skeptical code reviewer. Challenge my design decisions rather than confirming them.” [22] 
+
+Template A fixed output format forces the student to parse and evaluate structured information [7]. Requiring the AI to produce a vulnerability report in a standard-ised format (CWE ID, affected component, severity). 
+
+Error Identification 
+
+Fact Check List Asking the AI to list the fac-tual claims underlying its answer makes those claims visible and checkable [7]. 
+
+“List every assumption you are making about the authentication flow before explaining the fix.” 
+
+Reflection Prompting the AI to articulate its own reasoning exposes the gaps students should then inves-tigate [7, 14]. 
+
+“What are the limits of your anal-ysis? What would you need to see to change your recommendation?” Prompt Improvement 
+
+Cognitive Verifier Breaking a problem into explicit steps (chain-of-thought) creates a visible reasoning trace the student can follow or challenge [7]. 
+
+“Walk through the refactoring step by step, explaining the security ra-tionale at each stage.” Continued on next page 
+
+6Table 2 – continued 
+
+Pattern Educational Rationale Example in CS / Security Question Refinement 
+
+The AI improves the student’s own question, teaching problem formulation as a skill [7, 14]. A student submits a vague ques-tion; the AI returns a sharper ver-sion, which the student approves before proceeding. 
+
+Alternative Approaches 
+
+Generating multiple options forces comparison and prevents students from accepting the first solution [7]. 
+
+“Propose three mitigation strate-gies and compare their trade-offs in a table.” Interaction 
+
+Flipped Interaction The AI asks questions rather than providing answers, keeping the student in the reasoning role [7, 14]. The AI conducts a Socratic in-terview, asking one question at a time until the student identifies a vulnerability independently. 
+
+Game Play A simulation frames the interac-tion as a scenario, sustaining en-gagement and introducing conse-quentiality [7, 14]. An incident-response simulation: the AI plays the attacker, the stu-dent plays the defender, decisions have modelled consequences. 
+
+# 5 Applying the Framework: A Secure Coding Module 
+
+To show the taxonomy in action, we work through a complete course design for a master’s-level “Advanced Secure Coding” module, applying each step of the DELTA Framework [9] in turn. 
+
+## 5.1 Context 
+
+The students in this course have solid programming backgrounds—they can write func-tional code in Python or Java without assistance. What they lack is experience reasoning about their code under adversarial conditions. In current industry practice, they will write code alongside AI assistants; research shows that such assistants frequently suggest inse-cure implementations [23, 24]. The course must therefore move beyond syntax and toward 
+
+security-oriented code review : the capacity to recognise, analyse, and fix vulnerabilities regardless of whether the code was written by a human or an AI. 
+
+## 5.2 Learning Outcomes 
+
+By the end of the module, students should be able to: (1) identify common vulnerability classes (SQL injection, XSS, insecure deserialization) in code they did not write; (2) com-pare remediation strategies across at least two technical approaches and justify a choice; (3) write a security-oriented pull request description that a colleague or auditor could act on; and (4) recognise when AI-generated code suggestions introduce new risk rather than 7resolving the original one. The formulation matters: identify, compare, justify, recognise 
+
+all require the student to actively reason, not merely to generate. 
+
+## 5.3 Learning Activities 
+
+The central project runs over three activities, each scaffolded by a different prompt pat-tern. Students work with a realistic web application that contains a deliberately planted vulnerability. 
+
+5.3.1 Guided Vulnerability Discovery 
+
+Students must identify an SQL injection flaw in a Python Flask login handler. Rather than asking the AI where the bug is, they use the Flipped Interaction pattern: 
+
+“I am reviewing a Python Flask login function for security vulnerabilities. Ask me questions one at a time to guide my analysis until I can identify the specific type and location of the flaw.” 
+
+The AI asks about input sanitization, query construction, and error handling. The student answers from the code. The flaw emerges through the student’s own analysis, not from an AI explanation—which means the student cannot receive the answer without first demonstrating engagement with the problem. Productive Struggle is preserved by design. 
+
+5.3.2 Comparative Remediation 
+
+Once the vulnerability is identified, students must choose a fix. They use the Alternative Approaches pattern: 
+
+“Propose three distinct strategies to mitigate this SQL injection vulnerability in Python. Compare the pros and cons of (a) parameterized queries, (b) an ORM such as SQLAlchemy, and (c) a custom input sanitization function. Format the comparison as a table.” 
+
+The student does not accept the AI’s recommendation. Instead, they write a justification for their chosen approach—this is where Evaluative Judgement is explicitly exercised. The Template pattern constrains the output format, making the comparison easier to evaluate. 
+
+5.3.3 Supervised Implementation 
+
+Students refactor the code using their chosen approach. The Cognitive Verifier pattern keeps the AI from doing the work silently: 
+
+“Break down the refactoring step by step. For each step, state what you are changing and why it is more secure than the original.” 
+
+8The visible reasoning trace gives the student something to dispute or confirm. It also provides a natural audit trail for assessment. 
+
+## 5.4 Assessment 
+
+The portfolio submission consists of four elements. First, the Flipped Interaction chat log from Activity 1—the assessor can see whether the student was guiding the analysis or simply agreeing with the AI. Second, the written justification from Activity 2, which is graded on the quality of the comparison and the coherence of the reasoning, not on which approach was chosen. Third, the refactored code itself, checked against the OWASP Top 10 for the relevant vulnerability class. Fourth, a pull request description in a standard format (generated with Template assistance), covering what was changed, why, and what testing would be needed. This design is deliberately resistant to academic dishonesty. A student who outsources the entire project to an AI will produce a chat log that shows no analytical process, a justification without genuine trade-off reasoning, and code that may fix the original flaw but introduce others. Each component is assessing something the AI cannot meaningfully fake on the student’s behalf. 
+
+## 5.5 Reflection and Next Iteration 
+
+After the first cohort, the instructor would review: Did students find the Flipped Interac-tion appropriately challenging, or did they circumvent it by restarting the conversation? Was the comparative table from Activity 2 sufficiently nuanced, or did it become a for-mality? These questions feed directly into the next design cycle—which is exactly what the DELTA framework asks for. 
+
+# 6 Limitations 
+
+Following established practice in design science evaluation [17], we structure our limi-tations around standard threats to validity, applied here to the artifact demonstration rather than a controlled experiment. 
+
+Construct Validity. The capabilities of commercial LLMs change quickly [4]. A pat-tern like Flipped Interaction works precisely because current models respond well to instruction-based constraints. If future models infer pedagogical context and apply these constraints automatically, the explicit patterns may become unnecessary—or new ones will be needed. The taxonomy should be treated as a versioned artifact, not a fixed catalog. Whether the constructs of Productive Struggle and Evaluative Judgement are faithfully operationalized by the patterns as described also remains to be verified through empirical observation of student behavior. 9Internal Validity. The secure coding module described in Section 5 is a design arti-fact. The DSR demonstration phase used a different course context—a research methods module where students applied the taxonomy to thesis proposal development—and did not include controlled measurement. We therefore cannot report on student performance, engagement, or the actual difficulty of the activities as experienced by learners, nor can we rule out alternative explanations for any observed effects in a future deployment. 
+
+External Validity. The demonstration deployment was conducted in one master’s pro-gramme at one university. We cannot speak to how the framework would transfer to un-dergraduate courses, other institutional contexts, or disciplines outside computing. The prompt patterns themselves are not CS-specific, but whether the same mapping to peda-gogical goals holds elsewhere remains to be tested. The next step is a controlled deployment of the secure coding module, with pre- and post-measurement of security reasoning ability, collection of the chat logs as a data source, and structured student feedback on the pattern-based activities. That evaluation is planned for the following academic year. 
+
+# 7 Conclusion 
+
+Whether GenAI helps or hinders student learning depends less on the tool itself and more on how the prompts are designed. Given a poorly chosen prompt, an AI removes the need for the student to think. Given a well-chosen one, it can force exactly the kind of thinking the course is trying to develop. The taxonomy we have presented gives instructors a vocabulary for making that choice deliberately. Nine patterns, four categories, each one mapped to a specific pedagogical function. The secure coding module shows what it looks like in practice: three activi-ties, three patterns, each one preserving a different aspect of the reasoning process that assessment would otherwise be unable to see. The framework is a first iteration. The conceptual work—mapping engineering patterns to pedagogical goals—is, we believe, a useful contribution in its own right, and one that has been missing from the debate about AI in computer science education. 
+
+# Declarations 
+
+Competing Interests. The authors declare no competing interests. 
+
+Funding. No funding was received for this study. 
+
+Ethics Approval. The demonstration described in this paper was conducted as part of regular teaching activity at University of Applied Sciences St. Pölten. No personal data were collected, no experimental intervention beyond normal course delivery was applied, and no individual results are reported. Formal ethics approval was therefore not required. 10 Data Availability. No datasets were generated or analysed during the current study. 
+
+Author Contributions. Conceptualization: P.H., O.E., P.K.; Methodology: P.H.; In-vestigation: P.H.; Writing – original draft: P.H.; Writing – review & editing: P.H., O.E., P.K. 
+
+# References 
+
+[1] Owen K. Terry. I’m a Student. You Have No Idea How Much We’re Using ChatGPT. https://www.chronicle.com/article/ im-a-student-you-have-no-idea-how-much-were-using-chatgpt , May 2023. Last accessed 2026-04-21. [2] James Hiebert and Douglas A. Grouws. The effects of classroom mathematics teach-ing on students’ learning. In Frank K. Lester, editor, Second handbook of research on mathematics teaching and learning , pages 371–404. Information Age Publishing, Charlotte, 2007. ISBN 978-1-59311-589-0. [3] Aras Bozkurt et al. Speculative Futures on ChatGPT and Generative Artificial Intelligence (AI): A Collective Reflection from the Educational Landscape. Asian Journal of Distance Education , 18(1):53–130, 2023. doi: 10.5281/zenodo.7636568. [4] Jane Southworth, Kati Migliaccio, Joel Glover, Diane Reed, C. McCarty, Joel Bren-demuhl, and A. Thomas. Developing a model for AI Across the curriculum: Trans-forming the higher education landscape via innovation in AI literacy. Computers and Education: Artificial Intelligence , 4:100127, 2023. doi: 10.1016/j.caeai.2023.100127. [5] Cecilia K. Y. Chan. A comprehensive AI policy education framework for university teaching and learning. International Journal of Educational Technology in Higher Education , 20(1), 2023. doi: 10.1186/s41239-023-00408-3. [6] Jules White, Quchen Fu, Sam Hays, Michael Sandborn, Carlos Olea, Henry Gilbert, Ashraf Elnashar, Jesse Spencer-Smith, and Douglas C. Schmidt. A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT. In Proceedings of the 30th Conference on Pattern Languages of Programs , PLoP ’23, USA, 2023. The Hillside Group. ISBN 9781941652190. [7] Aniruddha Girish Pai. Enhancing Interaction with Large Language Models: A Cat-alog of Prompt Engineering Techniques. In 2025 International Conference on Com-puting Technologies (ICOCT) , pages 1–8, 2025. doi: 10.1109/ICOCT64433.2025. 11118417. [8] Margaret Bearman, Joanna Tai, Phillip Dawson, David Boud, and Rola Ajjawi. Developing evaluative judgement for a time of generative artificial intelligence. As-sessment & Evaluation in Higher Education , 49(6):893–905, 2024. doi: 10.1080/ 02602938.2024.2335321. [9] Centre for Teaching and Learning. Designing Learning, Teaching and Assessment (DeLTA) process. www.sun.ac.za . URL http: 
+
+11 //www.sun.ac.za/english/learning-teaching/ctl/t-l-resources/ design-for-learning-teaching-and-assessment-(delta)-cycle .[10] Lev S. Vygotsky. Mind in society: The development of higher psychological processes .Harvard University Press, Cambridge, MA, 1978. ISBN 978-0674576292. [11] Katy Quach. University students are using AI to write essays. Now what? https: //www.theregister.com/2022/12/27/university_ai_essays_students/ , 2022. Last accessed 2026-04-21. [12] Joanna Tai, Rola Ajjawi, David Boud, Phillip Dawson, and Ernesto Panadero. Devel-oping evaluative judgement: enabling students to make decisions about the quality of work. Higher Education , 76(3):467–481, 2018. doi: 10.1007/s10734-017-0220-3. [13] Jason M. Lodge, Shadi S. Alhadad, and Michael J. Lewis. When the black box is a black box: A statement on the use of AI in education. Australasian Journal of Educational Technology , 39(4):1–8, 2023. doi: 10.14742/ajet.8837. [14] Douglas C. Schmidt, Jesse Spencer-Smith, Quchen Fu, and Jules White. Towards a Catalog of Prompt Patterns to Enhance the Discipline of Prompt Engineering. Ada Lett. , 43(2):43–51, June 2024. ISSN 1094-3641. doi: 10.1145/3672359.3672364. URL 
+
+https://doi.org/10.1145/3672359.3672364 .[15] Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design patterns: Elements of reusable object-oriented Software . Prentice Hall, New Jersey, NY, 1995. ISBN 978-0201633610. [16] Boyuan Jia, Pu Yan, and Yicheng Liu. What makes a good prompter? insights into prompt literacy across mind, experience, and culture. Proceedings of the Association for Information Science and Technology , 62(1):931–935, October 2025. doi: 10.1002/ pra2.1316. URL https://doi.org/10.1002/pra2.1316 .[17] Alan R. Hevner, Salvatore T. March, Jinsoo Park, and Sudha Ram. Design science in information systems research. MIS Quarterly , 28(1):75–105, 2004. [18] Paul Johannesson and Erik Perjons. An Introduction to Design Science . Springer, 2022. ISBN 978-3030781347. [19] J. Biggs. Enhancing teaching through constructive alignment. Higher Education , 32 (3):347–364, 1996. doi: 10.1007/bf00138871. [20] Centre for Teaching and Learning. The 3R’s (Rethink, Redesign, Reassess): Aframework for adapting your teaching practice. https://www.sun.ac.za/english/ learning-teaching/ctl , 2023. Last accessed 2026-04-21. [21] Punya Mishra and Matthew J. Koehler. Technological Pedagogical Content Knowl-edge: A Framework for Teacher Knowledge. Teachers College Record , 108(6):1017– 1054, 2006. doi: 10.1111/j.1467-9620.2006.00684.x. [22] Ethan Mollick and Lilach Mollick. Assigning AI: Seven Approaches for Students, with Prompts. The Wharton School Research Paper, 2023. 12 [23] Owura Asare, Meiyappan Nagappan, and N. Asokan. Is GitHub’s Copilot as bad as humans at introducing vulnerabilities in code? Empirical Software Engineering ,28(6), September 2023. ISSN 1382-3256. doi: 10.1007/s10664-023-10380-1. URL 
+
+https://doi.org/10.1007/s10664-023-10380-1 .[24] Hammond Pearce, Baleegh Ahmad, Benjamin Tan, Brendan Dolan-Gavitt, and Ramesh Karri. Asleep at the Keyboard? Assessing the Security of GitHub Copi-lot’s Code Contributions. Communications of the ACM , 68(2):96–105, January 2025. ISSN 0001-0782. doi: 10.1145/3610721. URL https://doi.org/10.1145/3610721 .13
